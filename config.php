@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'cod_gaming';
+$db   = 'cod_shop';
 $user = 'root';       // change this if needed
 $pass = '';           // change this if needed
 $charset = 'utf8mb4';
