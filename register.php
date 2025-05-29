@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Register - COD Gaming</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    /* Background & font */
     body {
       background: #121212;
       background-image: radial-gradient(circle at top left, #0ff, #00aaff33);
@@ -51,22 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       margin: 0;
     }
 
-    /* Container card */
     .card {
       background: #1a1a1a;
       border-radius: 20px;
       width: 100%;
       max-width: 420px;
       padding: 2rem;
-      box-shadow:
-        0 0 10px #00ffff55,
-        0 0 30px #00ffff88,
-        0 0 60px #00ffffaa;
+      box-shadow: 0 0 10px #00ffff55, 0 0 30px #00ffff88, 0 0 60px #00ffffaa;
       border: 1px solid #00ffff88;
       text-align: center;
     }
 
-    /* Title styling */
     .card-title {
       font-size: 2.5rem;
       font-weight: 900;
@@ -75,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       text-shadow: 0 0 10px #00ffffbb;
     }
 
-    /* Input fields */
     .form-control {
       background: #222;
       border: 1.5px solid #00ffff;
@@ -94,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       outline: none;
     }
 
-    /* Labels */
     label {
       color: #00ffffcc;
       font-weight: 700;
@@ -105,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       text-align: left;
     }
 
-    /* Buttons */
     .btn-success {
       background: linear-gradient(45deg, #00ffff, #0088cc);
       border: none;
@@ -139,7 +130,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       text-decoration: underline;
     }
 
-    /* Alert messages */
     .alert-danger {
       background: #660000aa;
       border-radius: 12px;
@@ -149,7 +139,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       font-weight: 700;
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
       .card {
         padding: 1.5rem;
@@ -171,39 +160,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="">
       <div class="mb-3">
         <label for="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          class="form-control"
-          required
-          autofocus
-          minlength="3"
-        />
+        <input type="text" name="username" id="username" class="form-control" required autofocus minlength="3" />
       </div>
       <div class="mb-3">
         <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          class="form-control"
-          required
-        />
+        <input type="password" name="password" id="password" class="form-control" required />
       </div>
       <div class="mb-3">
         <label for="confirm_password">Confirm Password</label>
-        <input
-          type="password"
-          name="confirm_password"
-          id="confirm_password"
-          class="form-control"
-          required
-        />
+        <input type="password" name="confirm_password" id="confirm_password" class="form-control" required />
       </div>
       <button type="submit" class="btn btn-success">Register</button>
       <a href="login.php" class="btn-link">Already have an account? Login here</a>
+      <a href="#" class="btn-link" data-bs-toggle="modal" data-bs-target="#infoModal">Need Help?</a>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header bg-dark text-info">
+          <h5 class="modal-title" id="infoModalLabel">Registration Help</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-black text-light">
+          <p>Make sure your username is unique and at least 3 characters long. Passwords must match.</p>
+          <p>Need assistance? Contact us at <strong>support@codgaming.com</strong></p>
+        </div>
+        <div class="modal-footer bg-dark">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

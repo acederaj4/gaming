@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Invalid username or password.";
     }
 }
+
 $registeredMsg = $_SESSION['registered'] ?? '';
 unset($_SESSION['registered']);
 ?>
@@ -35,7 +36,6 @@ unset($_SESSION['registered']);
   <title>Login - COD Gaming</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    /* Background & font */
     body {
       background: #121212;
       background-image: radial-gradient(circle at top left, #0ff, #00aaff33);
@@ -43,27 +43,22 @@ unset($_SESSION['registered']);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Orbitron', sans-serif; /* gaming style font */
+      font-family: 'Orbitron', sans-serif;
       color: #00ffff;
       margin: 0;
     }
 
-    /* Container card */
     .card {
       background: #1a1a1a;
       border-radius: 20px;
       width: 100%;
       max-width: 420px;
       padding: 2rem;
-      box-shadow:
-        0 0 10px #00ffff55,
-        0 0 30px #00ffff88,
-        0 0 60px #00ffffaa;
+      box-shadow: 0 0 10px #00ffff55, 0 0 30px #00ffff88, 0 0 60px #00ffffaa;
       border: 1px solid #00ffff88;
       text-align: center;
     }
 
-    /* Title styling */
     .card-title {
       font-size: 2.5rem;
       font-weight: 900;
@@ -72,7 +67,6 @@ unset($_SESSION['registered']);
       text-shadow: 0 0 10px #00ffffbb;
     }
 
-    /* Input fields */
     .form-control {
       background: #222;
       border: 1.5px solid #00ffff;
@@ -91,7 +85,6 @@ unset($_SESSION['registered']);
       outline: none;
     }
 
-    /* Labels */
     label {
       color: #00ffffcc;
       font-weight: 700;
@@ -102,7 +95,6 @@ unset($_SESSION['registered']);
       text-align: left;
     }
 
-    /* Buttons */
     .btn-success {
       background: linear-gradient(45deg, #00ffff, #0088cc);
       border: none;
@@ -136,7 +128,6 @@ unset($_SESSION['registered']);
       text-decoration: underline;
     }
 
-    /* Alert messages */
     .alert-success {
       background: #006600cc;
       border-radius: 12px;
@@ -155,7 +146,6 @@ unset($_SESSION['registered']);
       font-weight: 700;
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
       .card {
         padding: 1.5rem;
@@ -189,7 +179,26 @@ unset($_SESSION['registered']);
       </div>
       <button type="submit" class="btn btn-success">Login</button>
       <a href="register.php" class="btn-link">Don't have an account? Register here</a>
+      <a href="#" class="btn-link" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header bg-dark text-info">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-black text-light">
+          <p>Please contact support at <strong>support@codgaming.com</strong> or visit the admin panel for reset instructions.</p>
+        </div>
+        <div class="modal-footer bg-dark">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
